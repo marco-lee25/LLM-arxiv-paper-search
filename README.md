@@ -23,33 +23,12 @@ A lightweight information-retrieval helper that combines online search (arXiv) w
 
 ### Environment setup
 
-Option A — Conda (recommended):
+Conda :
 ```bash
 conda env create -f environment.yml
 conda activate llm_ir_search
 ```
 
-Option B — venv + pip:
-```bash
-# 1) Create and activate a virtual environment
-python -m venv .venv
-# Windows PowerShell
-. .venv/Scripts/Activate.ps1
-# macOS/Linux
-# source .venv/bin/activate
-
-# 2) Install dependencies
-pip install -U pip
-pip install arxiv langchain langchain-core langchain-openai pydantic openai
-```
-
-Verification (optional):
-```bash
-python - << 'PY'
-import arxiv, pydantic, langchain; import tkinter
-print('Env looks OK')
-PY
-```
 
 ### Configure API Key
 Set your OpenAI API key in the environment before running:
@@ -100,21 +79,8 @@ LLM-powered_IR_search/
 └─ README.md          # You are here
 ```
 
----
-
-## Troubleshooting
-- **OPENAI_API_KEY not set**: The LLM calls will fail. Export the key as shown above.
-- **Pydantic import error**: Ensure `pydantic>=2.0` (the code uses `pydantic.v1` compatibility layer).
-- **arXiv API errors**: Network hiccups or rate limits can return empty results; try again or reduce requests.
-- **Tkinter issues on Linux**: Install Tk libraries (e.g., `sudo apt-get install python3-tk`). On Windows/macOS, Tkinter is typically bundled.
-
----
-
 ## Notes
 - Models and API behavior may evolve; adjust the model name in `llm_handler.py` if needed.
 - Consider adding retry/backoff if you encounter transient API errors.
 
----
-
-## License
-Add your preferred license here (e.g., MIT). If you add a `LICENSE` file, mention it here.
+--
