@@ -1,0 +1,6 @@
+arxiv
+langchain
+langchain-core
+langchain-openai
+pydantic>=2
+openai
